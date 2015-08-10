@@ -28,15 +28,16 @@ public class Lesson6 {
        c.addAll(Arrays.asList(c1));     //mass creation of some values for the current list "c"
        System.out.println(c.size());*/
 //////////////////////
-        ArrayList<String> s = new ArrayList<>();
+        ArrayList<String> s = new ArrayList<String>();
         s.add("a");
         s.add("b");
         s.add("c");
         s.add("d");
         print(s);
 ////////////////////
-        ArrayList<String> f = new ArrayList<>();
-        f.add("a"); f.add("b");
+        ArrayList<String> f = new ArrayList<String>();
+        f.add("a");
+        f.add("b");
         f.add("c");
         f.add("d");
         System.out.println(isListsEqual(s, f));
@@ -56,13 +57,15 @@ public class Lesson6 {
 //////////////////////////
         System.out.println();
         System.out.println(isEqual(a, s));
+        System.out.println("--------------------");
 //******************************************************
         sayHello();
         System.out.println(hello());
         System.out.println(hello("Friends"));
         System.out.println(hello("Friends").equals(hello("Friends")));
         System.out.println(hello("Friends") == hello("Friends"));
-        ////
+/////////////////////////////////////
+        System.out.println("--------------------");
         test("Hello Engineers!", hello());
         test("Hello Enginers!", hello());
         test("Hello Friends", hello("Friends"));
@@ -72,20 +75,15 @@ public class Lesson6 {
 //*****************????????????????
 
         test("Hello to all 14 students!", hello(14));
-        // Test PASSED.
         test("Hello student!", hello(1));
-        // Test PASSED.
-        test("No one came.", hello(0));
-        // Test PASSED.
+        test("No one came. ", hello(0));
         System.out.println("---------------------");
 //*****************????????????????
         test("Hello to all 25 persons!", hello(25, "persons"));
-        // Test PASSED.
         test("Hello to all 99 programmers!", hello(99, "programmers"));
-        // Test PASSED.
+        System.out.println("---------------------");
 //*****************????????????????
         test("Hello Jean Podmore Oleksiia !", hello(new String[] {"Jean", "Podmore", "Oleksiia"}));
-        // Test PASSED.
         test("Hello Anonymous Anonymous2 !", hello(new String[] {"Anonymous", "Anonymous2"}));
 
     }
@@ -95,13 +93,13 @@ public class Lesson6 {
             System.out.println(s.get(i));
         }
     }
-    public static boolean isListsEqual(ArrayList s, ArrayList f){
-        return s.equals(f);
-    }
     public static void print(String[] a) {
         for (int i = 0; i <= 4; i++) {
             System.out.print(a[i]);
         }
+    }
+    public static boolean isListsEqual(ArrayList s, ArrayList f){
+        return s.equals(f);
     }
     public static boolean isEqual(String [] a, ArrayList s) {
         boolean tr=true;
@@ -123,32 +121,32 @@ public class Lesson6 {
         return "Hello "+who;
     }
     public static String hello(int howMany) {
-        if (howMany==14)
+        if (howMany!=1 && howMany!=0)
             return "Hello to all " + howMany + " students!";
         else if (howMany==1)
             return "Hello student!";
         else
-            return "No one came";
+            return "No one came.";
     }
     public static String hello(int howMany, String whom) {
-        if (howMany==25)
-            return "Hello to all " + howMany + whom+" !";
+        if (howMany<=25)
+            return "Hello to all " + howMany+" " + whom+"!";
         else
-            return "Hello to all " + howMany + whom+" !";
+            return "Hello to all " + howMany+" " + whom+" !";
     }
     public static String hello(String[] str){
+        String str1="";
         for (int j = 0; j < str.length; j=j+1) {
-            if (notstrings[j]==target){
-                count = count+1;
-            }
+            str1 = str1 + str[j]+" ";
+        }
 
-        return "TEXT MAS "+(strings[w1-1])+" "+(strings[w2-1])
+        return "Hello "+ str1+ "!";
     }
    /* public static String hello(int howMany, String whom) {
         // Дописать код сюда
     }*/
 
-    public static void test(String expected, String actual) {
+    public static void test(String expected, String actual ) {
           if (expected.equals(actual)) {
             System.out.println("Test PASSED.");
         } else {
