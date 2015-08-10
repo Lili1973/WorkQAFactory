@@ -136,8 +136,8 @@ public class Lesson6 {
     }
     public static String hello(String[] str){
         String str1="";
-        for (int j = 0; j < str.length; j=j+1) {
-            str1 = str1 + str[j]+" ";
+        for (String aStr : str) {
+            str1 = str1 + aStr + "";
         }
 
         return "Hello "+ str1+ "!";
