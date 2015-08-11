@@ -115,7 +115,7 @@ public class Lesson6 {
         // Vernon
 
         System.out.println(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge"));
-      
+
     }
 
     public static void print(ArrayList s){
