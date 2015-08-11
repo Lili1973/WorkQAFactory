@@ -1,7 +1,10 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 public class Lesson6 {
     public static void main (String[] less6) {
 
@@ -83,9 +86,36 @@ public class Lesson6 {
         test("Hello to all 99 programmers!", hello(99, "programmers"));
         System.out.println("---------------------");
 //*****************????????????????
-        test("Hello Jean Podmore Oleksiia !", hello(new String[] {"Jean", "Podmore", "Oleksiia"}));
-        test("Hello Anonymous Anonymous2 !", hello(new String[] {"Anonymous", "Anonymous2"}));
+        test("Hello Jean Podmore Oleksiia !", hello(new String[]{"Jean", "Podmore", "Oleksiia"}));
+        test("Hello Anonymous Anonymous2 !", hello(new String[]{"Anonymous", "Anonymous2"}));
+////////////////////////////////////////
+        test("Hello Slughorn, Norris, Fred and George!", hello(Arrays.asList("Slughorn", "Norris", "Fred", "George")));
+        test("Hello Horace, Miss and Weasley's!", hello(Arrays.asList("Horace", "Miss", "Weasley's")));
+///////////////////////////////////
+        test(Arrays.asList(1, 2, 3), Arrays.asList(1, 2, 3));
+        test(Arrays.asList(1, 4, 3), Arrays.asList(1, 2, 3));
+///////////////////////////////////
+      //  test(Arrays.asList(6), stringsLength(Arrays.asList("Jordan")));
+        // Test PASSED.
+      //  test(Arrays.asList(5, 3, 8), stringsLength(Arrays.asList("Harry", "Ron", "Hermione")));
+        // Test PASSED.
+       // test("[5, 5]", stringsLength(Arrays.asList("Jinny", "Lupin")).toString());
+        // Test PASSED.
+        //test(Arrays.asList(3, 6, 1, -60), reverseInts(Arrays.asList(-60, 1, 6, 3)));
+        // Test PASSED.
+       // prettyPrint(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge"), true);
+        // Vernon
+        //  Dudley
+        //   Petunia
+        //    Madge
+        //prettyPrint(reverse(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge")), false);
+        //    Madge
+        //   Petunia
+        //  Dudley
+        // Vernon
 
+        System.out.println(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge"));
+      
     }
 
     public static void print(ArrayList s){
@@ -142,9 +172,18 @@ public class Lesson6 {
 
         return "Hello "+ str1+ "!";
     }
-   /* public static String hello(int howMany, String whom) {
-        // Дописать код сюда
-    }*/
+    public static String hello(List<String> c) {
+        String c1 = "Hello ";
+        for (int i = 0; i < c.size(); i++) {
+            if (i == 0)
+                c1 = c1 + c.get(i);
+            else if (i == c.size() - 1)
+                c1 = c1 + " and " + c.get(i) + "!";
+            else
+                c1 = c1 + ", " + c.get(i);
+        }
+        return c1;
+    }
 
     public static void test(String expected, String actual ) {
           if (expected.equals(actual)) {
@@ -155,5 +194,13 @@ public class Lesson6 {
               System.out.println("Actual:   " + actual);
         }
     }
-
+    public static void test(List expected, List actual ) {
+        if (expected.equals(actual)) {
+            System.out.println("Test PASSED.");
+        } else {
+            System.out.println("Test FAILED.");
+            System.out.println("Expected: " + expected );
+            System.out.println("Actual:   " + actual);
+        }
+    }
 }
