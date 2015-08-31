@@ -1,6 +1,8 @@
 package com.company;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -51,30 +53,27 @@ public class XpathHWork2 {
         slp(7);
 
         WebElement err1 = drv.findElementByXPath("//div[@ng-message]");
-        System.out.println("Error: " + err1.getText());
+        System.out.println("3.Error: " + err1.getText());
         slp(7);
         //WebElement err2 = drv.findElementByXPath("//div[@ng-message]");
-        System.out.println("Error: " + err1.getText());
+        System.out.println("5.Error: " + err1.getText());
         slp(7);
 
 //6. Заполнить пароль строкой "asd"
 //7. Напечатать в консоль сообщение об ошибке от пароля (должно бьіть другое)
 
-        WebElement a3 = drv.findElementByXPath("//input[@name='username']");
+        WebElement a3 = drv.findElementByXPath("//input[@name='password']");
         a3.sendKeys("asd");
-        a3.sendKeys(Keys.TAB);
         slp(8);
-        WebElement err3 = drv.findElementByXPath("//*[@ng-message='minlength']");
-        System.out.println("Error: " + err3.getText());
+        WebElement err3 = drv.findElementByXPath("(//div[@ng-message])[2]");
+        System.out.println("7.Error: " + err3.getText());
         slp(7);
 
 //8. Дописать в пароль еще "fff"
-        WebElement a4 = drv.findElementByXPath("//input[@name='password']");
-        a4.sendKeys("fff");
-        a4.sendKeys(Keys.TAB);
+
+        a3.sendKeys("fff");
         slp(7);
         System.out.println(a3.getAttribute("value"));
-        System.out.println(a4.getAttribute("value"));
 
 //9. Напечатать в консоль количество вебєлементов найденньіх по XPath которьій использовали в шагах 5 и 7. (findElements .... .size())
         List<WebElement> d2=drv.findElementsByXPath("//div[@ng-message]");
@@ -82,7 +81,7 @@ public class XpathHWork2 {
             WebElement res1 = d2.get(i);
             System.out.println((i+1)+". "+res1.getText());
         }
-        System.out.println("Count of path: "+ d2.size());
+        System.out.println("9.Count of path: "+ d2.size());
 
 // 10. Заполнить в логин "a"
 // 11. Напечатать в консоль сообщение об ошибке от логина
@@ -121,4 +120,25 @@ public class XpathHWork2 {
           e.printStackTrace();
       }
   }
+
+  public static WebElement findElement(String targetXPath, WebDriver wdr) {
+      for (int i = 0; i < 600; i++)    {
+          if (wdr.findElements(By.xpath(targetXPath)).size() > 0)
+          {
+              break;
+          }
+          slp(100);
+      }
+      return wdr.findElement(By.xpath(targetXPath));
+    }
 }
+//button/span[text()='Log in']
+//button[span/text()='Log in']
+/*WebElement gmailLink = dvr.findElement
+        (By.linkText("Gmail")).findElement(By.tagName("a"));
+Assert.assertEquals("https://mail.google.com/", gmailLink.getAttribute("href"));*/
+
+/* pwd.sendKeys("asd");
+       slp(1);
+       error = findElement(pPwdError,drv);
+       System.out.println(error.getText());*/
