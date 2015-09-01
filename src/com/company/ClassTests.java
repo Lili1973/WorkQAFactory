@@ -11,7 +11,7 @@ public class ClassTests {
 
     @Test
     public void test1() {
-        Assert.assertEquals(19, 10 + 10);
+        Assert.assertEquals(20, 10 + 10);
 
         Assert.assertEquals(true, 1 == 2);
         Assert.assertTrue(1 == 2);
