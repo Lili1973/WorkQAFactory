@@ -25,7 +25,7 @@ public class Apppicker {
         slp(3);
         WebElement j1 = drv.findElementByXPath("(//div/div/ul)[2]/li[1]");
         j1.click();
-        /html/body/div[2]/div/div[2]/div/div/ul/li[1]/a
+
         slp(5);
         WebElement a1 = drv.findElementByXPath("//*[@id='User_email']");
         a1.sendKeys("apppicker_developer@ukr.net");
