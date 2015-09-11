@@ -294,6 +294,19 @@ public class Lesson13 {
         Assert.assertEquals(true, AngelPage.getEnabledPassword());
         System.out.println(AngelPage.getEnabledPassword());
     }
+    //http://oxogamestudio.com/passwd.current5.htm
+    @Test
+    public void test32() {
+        Assert.assertEquals("Your master password", AngelPage.nameFieldMaster());
+    }
+    @Test
+    public void test33() {
+        Assert.assertEquals("Site name", AngelPage.nameFieldSite());
+    }
+    @Test
+    public void test34() {
+        Assert.assertEquals("Generated password", AngelPage.nameGeneratePwd());
+    }
     @After
     public void aftertest(){
         TestHelper.quit();
