@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 
 public class AngelPage {
 
-    public static String url = "http://oxogamestudio.com/passwd.current10.htm";
+    public static String url = "http://oxogamestudio.com/passwd.current2.htm";
     //"http://angel.net/~nic/passwd.current.html";
 
     public static void setMaster(String value) {
@@ -21,6 +21,7 @@ public class AngelPage {
         waitForVisible("//*[@value='Generate']");
         TestHelper.drv.findElement(By.xpath("//*[@value='Generate']")).click();
         System.out.println("Click allert");
+        TestHelper.slp(5);
         clickOnAlert();
     }
 
@@ -28,6 +29,8 @@ public class AngelPage {
         waitForVisible("//*[@value='Generate']");
         TestHelper.drv.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys(Keys.ENTER);
         //*[@name='site']
+        TestHelper.slp(5);
+        clickOnAlert();
     }
 
     public static String getPassword() throws InterruptedException {
@@ -75,7 +78,7 @@ public class AngelPage {
         return TestHelper.drv.findElement(By.xpath("//tr[4]/td[1]")).getText();
     }
     public static void waitForVisible(String xpath1) throws InterruptedException {
-        for (int i = 0; i <= 100; i++) {
+        for (int i = 0; i <= 150; i++) {
 
             if (TestHelper.drv.findElements(By.xpath(xpath1)).size() != 0)
 //                && !TestHelper.drv.findElement(By.xpath(xpath1)).getAttribute("value").equals("")
@@ -83,7 +86,7 @@ public class AngelPage {
                 System.out.println("if");
                 return;
             } else {
-                Thread.sleep(100);
+                Thread.sleep(5000);
                 System.out.println("else");
             }
         }
@@ -91,7 +94,6 @@ public class AngelPage {
     public static void clickOnAlert() {
         if(isAlertPresent()) {
             //System.out.println("In click");
-            TestHelper.slp(10);
             Alert alert = TestHelper.drv.switchTo().alert();
             //System.out.println("after constructor");
             System.out.println(alert.getText());
