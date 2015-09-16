@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TestHelper {
 
     public static WebDriver drv;
+    public static String master="//tr[1]/td[2]/input";
+    public static String siteName="//tr[2]/td[2]/input";
 
     public static void setup(){
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
@@ -34,4 +36,6 @@ public class TestHelper {
             e.printStackTrace();
         }
     }
+
+
 }

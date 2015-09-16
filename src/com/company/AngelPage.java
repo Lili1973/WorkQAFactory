@@ -4,25 +4,28 @@ import org.openqa.selenium.*;
 
 public class AngelPage {
 
-    public static String url = "http://oxogamestudio.com/passwd.current2.htm";
+    public static String url = "http://oxogamestudio.com/passwd.current7.htm";
     //"http://angel.net/~nic/passwd.current.html";
 
     public static void setMaster(String value) {
-        TestHelper.drv.findElement(By.xpath("//tr[1]/td[2]/input")).sendKeys(value);
+        TestHelper.drv.findElement(By.xpath(TestHelper.master)).sendKeys(value);
         //By.xpath("//*[@name='master']"
     }
 
-    public static void setSitename(String value) throws InterruptedException {
-        TestHelper.drv.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys(value);
+    public static void setSitename(String value) {
+        TestHelper.drv.findElement(By.xpath(TestHelper.siteName)).sendKeys(value);
         //By.xpath("//*[@name='site']"
     }
 ///////////////////
-    public static void generate() throws InterruptedException {
-        waitForVisible("//*[@value='Generate']");
+    public static void generate()  {
+        //waitForVisible("//*[@value='Generate']");
+       // findElement("//*[@value='Generate']");
         TestHelper.drv.findElement(By.xpath("//*[@value='Generate']")).click();
-        System.out.println("Click allert");
+        findElement("//tr[4]/td[2]/input");
+
+        /*System.out.println("Click allert");
         TestHelper.slp(5);
-        clickOnAlert();
+        clickOnAlert();*/
     }
 
     public static void sendEnter() throws InterruptedException {
@@ -33,8 +36,9 @@ public class AngelPage {
         clickOnAlert();
     }
 
-    public static String getPassword() throws InterruptedException {
-        waitForVisible("//tr[4]/td[2]/input");
+    public static String getPassword() {
+        //waitForVisible("//tr[4]/td[2]/input");
+        findElement("//tr[4]/td[2]/input");
         return TestHelper.drv.findElement(By.xpath("//tr[4]/td[2]/input")).getAttribute("value");
         //input[@name='password']
     }
@@ -91,6 +95,45 @@ public class AngelPage {
             }
         }
     }
+//////////////////////////////////
+ /*   public static void waitForValue(String targetXPath) {
+        waitForElement(targetXPath, TestHelper.drv);
+        for (int i = 0; i < 600; i++) {
+            WebElement inp = TestHelper.drv.findElement(By.xpath(targetXPath));
+            if (inp.getAttribute("value").length() > 0) {
+                break;
+            }
+            slp(100);
+        }
+    }
+
+    public static void waitForValue(String targetXPath, String value) {
+        waitForElement(targetXPath, TestHelper.drv);
+        for (int i = 0; i < 600; i++) {
+            WebElement inp = TestHelper.drv.findElement(By.xpath(targetXPath));
+            if (inp.getAttribute("value").equals(value)) {
+                break;
+            }
+            slp(100);
+        }
+    }*/
+/////////////////////////////////////
+
+    public static void findElement(String targetXPath) {
+        for (int i = 0; i < 600; i++)
+        {
+            if (TestHelper.drv.findElements(By.xpath(targetXPath)).size() > 0)
+            {
+                break;
+            }
+            TestHelper.slp(5);
+        }
+       // return TestHelper.drv.findElement(By.xpath(targetXPath));
+    }
+
+///////////////////////////////////////////////////
+
+
     public static void clickOnAlert() {
         if(isAlertPresent()) {
             //System.out.println("In click");
