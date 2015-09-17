@@ -13,21 +13,21 @@ public class Lesson13 {
     }
 
     @Test
-    public void test1() throws InterruptedException {
+    public void test1() {
         AngelPage.setMaster("masterpass");
         AngelPage.setSitename("google.com");
         AngelPage.generate();
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test2() throws InterruptedException {
+    public void test2() {
         AngelPage.setMaster("hello");
         AngelPage.setSitename("google.com");
         AngelPage.generate();
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test3() throws InterruptedException {
+    public void test3() {
         AngelPage.setMaster("qwe123");
         AngelPage.setSitename("google.com");
         AngelPage.sendEnter();
@@ -35,7 +35,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test4() throws InterruptedException {
+    public void test4() {
         AngelPage.setMaster("qwe123");
         AngelPage.setSitename("google.com");
         AngelPage.generate();
@@ -43,7 +43,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test5() throws InterruptedException {
+    public void test5() {
         AngelPage.setMaster("");
         AngelPage.setSitename("");
         AngelPage.generate();
@@ -51,7 +51,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test6() throws InterruptedException {
+    public void test6() {
         AngelPage.setMaster("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         AngelPage.setSitename("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         AngelPage.generate();
@@ -59,7 +59,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test66() throws InterruptedException {
+    public void test66() {
         AngelPage.setMaster("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         AngelPage.setSitename("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         AngelPage.generate();
@@ -67,7 +67,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-      public void test7() throws InterruptedException {
+      public void test7() {
         AngelPage.setMaster(" ");
         AngelPage.setSitename(" ");
         AngelPage.generate();
@@ -75,7 +75,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test8() throws InterruptedException {
+    public void test8() {
         AngelPage.setMaster("333");
         AngelPage.setSitename("111");
         AngelPage.generate();
@@ -83,7 +83,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test9() throws InterruptedException {
+    public void test9() {
         AngelPage.setMaster("111");
         AngelPage.setSitename("333");
         AngelPage.generate();
@@ -91,7 +91,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test10() throws InterruptedException {
+    public void test10() {
         AngelPage.setMaster("~!@#$%^&*()_+{}|\":?></\\");
         AngelPage.setSitename("~!@#$%^&*()_+{}|\":?></\\");
         AngelPage.generate();
@@ -99,7 +99,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test11() throws InterruptedException {
+    public void test11() {
         AngelPage.setMaster("qwe123");
         AngelPage.setSitename("asd");
         AngelPage.generate();
@@ -107,7 +107,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test12() throws InterruptedException {
+    public void test12() {
         AngelPage.setMaster("qwe123");
         AngelPage.setSitename("ASD");
         AngelPage.generate();
@@ -115,7 +115,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test13() throws InterruptedException {
+    public void test13() {
         AngelPage.setMaster("QWE123");
         AngelPage.setSitename("asd");
         AngelPage.generate();
@@ -123,7 +123,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test14() throws InterruptedException {
+    public void test14() {
         AngelPage.setMaster("QWE123");
         AngelPage.setSitename("ASD");
         AngelPage.generate();
@@ -131,7 +131,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test15() throws InterruptedException {
+    public void test15(){
         AngelPage.setMaster("");
         AngelPage.setSitename("asd");
         AngelPage.generate();
@@ -139,7 +139,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test16() throws InterruptedException {
+    public void test16() {
         AngelPage.setMaster("qwe123");
         AngelPage.setSitename("");
         AngelPage.generate();
@@ -147,7 +147,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test17() throws InterruptedException {
+    public void test17() {
         AngelPage.setMaster("1+1");
         AngelPage.setSitename("");
         AngelPage.generate();
@@ -155,7 +155,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test18() throws InterruptedException {
+    public void test18() {
         AngelPage.setMaster("2/0");
         AngelPage.setSitename("2/0");
         AngelPage.generate();
@@ -163,7 +163,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test19() throws InterruptedException {
+    public void test19() {
         AngelPage.setMaster("\"a\"");
         AngelPage.setSitename("\"a\"");
         TestHelper.slp(5);
@@ -172,7 +172,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test20() throws InterruptedException {
+    public void test20() {
         AngelPage.setMaster("\"([a-zA-Z]+) (\\d+)\"");
         AngelPage.setSitename("\"([a-zA-Z]+) (\\d+)\"");
         TestHelper.slp(5);
@@ -181,7 +181,7 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test21() throws InterruptedException {
+    public void test21() {
         AngelPage.setMaster("àáâãäåçèéêëìíîðñòôõöö");
         AngelPage.setSitename("àáâãäåçèéêëìíîðñòôõöö");
         TestHelper.slp(5);

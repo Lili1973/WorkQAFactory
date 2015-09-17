@@ -9,6 +9,7 @@ public class TestHelper {
     public static WebDriver drv;
     public static String master="//tr[1]/td[2]/input";
     public static String siteName="//tr[2]/td[2]/input";
+    public static String buttonGenerate="//*[@value='Generate']";
 
     public static void setup(){
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");

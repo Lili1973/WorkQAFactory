@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 
 public class AngelPage {
 
-    public static String url = "http://oxogamestudio.com/passwd.current7.htm";
+    public static String url = "http://oxogamestudio.com/passwd.current9.htm";
     //"http://angel.net/~nic/passwd.current.html";
 
     public static void setMaster(String value) {
@@ -18,18 +18,18 @@ public class AngelPage {
     }
 ///////////////////
     public static void generate()  {
-        //waitForVisible("//*[@value='Generate']");
+        waitForVisible(TestHelper.buttonGenerate);
        // findElement("//*[@value='Generate']");
-        TestHelper.drv.findElement(By.xpath("//*[@value='Generate']")).click();
-        findElement("//tr[4]/td[2]/input");
+        TestHelper.drv.findElement(By.xpath(TestHelper.buttonGenerate)).click();
+        //findElement("//tr[4]/td[2]/input");
 
-        /*System.out.println("Click allert");
+        //System.out.println("Click allert");
         TestHelper.slp(5);
-        clickOnAlert();*/
+        clickOnAlert();
     }
 
-    public static void sendEnter() throws InterruptedException {
-        waitForVisible("//*[@value='Generate']");
+    public static void sendEnter()  {
+        waitForVisible(TestHelper.buttonGenerate);
         TestHelper.drv.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys(Keys.ENTER);
         //*[@name='site']
         TestHelper.slp(5);
@@ -38,7 +38,7 @@ public class AngelPage {
 
     public static String getPassword() {
         //waitForVisible("//tr[4]/td[2]/input");
-        findElement("//tr[4]/td[2]/input");
+        waitForVisible("//tr[4]/td[2]/input");
         return TestHelper.drv.findElement(By.xpath("//tr[4]/td[2]/input")).getAttribute("value");
         //input[@name='password']
     }
@@ -81,45 +81,45 @@ public class AngelPage {
     public static String nameGeneratePwd() {
         return TestHelper.drv.findElement(By.xpath("//tr[4]/td[1]")).getText();
     }
-    public static void waitForVisible(String xpath1) throws InterruptedException {
+    public static void waitForVisible(String xpath1)  {
         for (int i = 0; i <= 150; i++) {
 
-            if (TestHelper.drv.findElements(By.xpath(xpath1)).size() != 0)
-//                && !TestHelper.drv.findElement(By.xpath(xpath1)).getAttribute("value").equals("")
+            if ((TestHelper.drv.findElements(By.xpath(xpath1)).size() != 0)
+                && !TestHelper.drv.findElement(By.xpath(xpath1)).getAttribute("value").equals(""))
             {
                 System.out.println("if");
                 return;
             } else {
-                Thread.sleep(5000);
+                TestHelper.slp(5);
                 System.out.println("else");
             }
         }
     }
 //////////////////////////////////
- /*   public static void waitForValue(String targetXPath) {
-        waitForElement(targetXPath, TestHelper.drv);
+  /*  public static void waitForValue(String targetXPath) {
+        findElement(targetXPath);
         for (int i = 0; i < 600; i++) {
             WebElement inp = TestHelper.drv.findElement(By.xpath(targetXPath));
             if (inp.getAttribute("value").length() > 0) {
                 break;
             }
-            slp(100);
+            TestHelper.slp(100);
         }
     }
 
-    public static void waitForValue(String targetXPath, String value) {
-        waitForElement(targetXPath, TestHelper.drv);
+   /* public static void waitForValue(String targetXPath, String value) {
+        findElement(targetXPath);
         for (int i = 0; i < 600; i++) {
             WebElement inp = TestHelper.drv.findElement(By.xpath(targetXPath));
             if (inp.getAttribute("value").equals(value)) {
                 break;
             }
-            slp(100);
+            TestHelper.slp(100);
         }
     }*/
 /////////////////////////////////////
 
-    public static void findElement(String targetXPath) {
+ /*   public static WebElement findElement(String targetXPath) {
         for (int i = 0; i < 600; i++)
         {
             if (TestHelper.drv.findElements(By.xpath(targetXPath)).size() > 0)
@@ -128,8 +128,8 @@ public class AngelPage {
             }
             TestHelper.slp(5);
         }
-       // return TestHelper.drv.findElement(By.xpath(targetXPath));
-    }
+        return TestHelper.drv.findElement(By.xpath(targetXPath));
+    }*/
 
 ///////////////////////////////////////////////////
 
