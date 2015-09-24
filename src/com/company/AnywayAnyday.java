@@ -9,11 +9,11 @@ public class AnywayAnyday {
 
     public static void setLenguage(String value){
         TestHelper.drv.findElement(
-                By.xpath("(//*[contains(@class,'b-menu-item-button-text--title' )])[1]")).click();
+                By.xpath("//*[contains(@class,'j-current_culture')]")).click();
         //("//*[contains(@class,'j-current_culture')]")).click();
         //("(//*[contains(@class,'b-menu-item-button-text--title' )])[1]")).click();
         TestHelper.drv.findElement(
-                By.xpath("//*[contains(@class,'b-language-section')]//li[contains(@class,'b-drop_down_list-item')]//span[text()='"+value+"']")).click();
-                //  ("//*[contains(@class,'b-language-section')]//li[contains(@class,'b-drop_down_list-item')]//span[text()='English']")).click();
+                By.xpath("//*[contains(@class,'b-language-sectioncontain')]//li[contains(@class,'b-drop_down_list-item')]//span[text()='"+value+"']")).click();
+        //  ("//*[contains(@class,'b-language-section')]//li[contains(@class,'b-drop_down_list-item')]//span[text()='English']")).click();
     }
 }
